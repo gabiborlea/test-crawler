@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crawler Test Site</title>
+</head>
+<body>
+    <h1>Crawler Test Site</h1>
+    <p>This site is used for testing the orphan file cleanup feature.</p>
+
+    <h2>Test Pages:</h2>
+    <ul>
+        <li><a href="page1.html">Page 1 - Permanent</a></li>
+        <li><a href="page2.html">Page 2 - Permanent</a></li>
+        <li><a href="page3.html">Page 3 - DELETE THIS AFTER FIRST CRAWL</a></li>
+    </ul>
+
+    <h2>Testing Instructions:</h2>
+    <ol>
+        <li>Crawl this site with maxDepth=1</li>
+        <li>Wait for crawl to complete (should create 4 files)</li>
+        <li>Delete page3.html and push changes</li>
+        <li>Wait for recrawl (1 minute with test cron)</li>
+        <li>Verify url_page3.md was deleted from database</li>
+    </ol>
+</body>
+</html>
